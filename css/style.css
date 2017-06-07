@@ -6676,26 +6676,19 @@ ul.instagram-photos li {
   src: url("https://fonts.googleapis.com/css?family=Gabriela.eot?#iefix") format("embedded-opentype"), url("https://fonts.googleapis.com/css?family=Gabriela.woff2") format("woff2"), url("https://fonts.googleapis.com/css?family=Gabriela.woff") format("woff"), url("https://fonts.googleapis.com/css?family=Gabriela.ttf") format("truetype"), url("https://fonts.googleapis.com/css?family=Gabriela.svg#Gabriela") format("svg"); }
 
 /*!
- * Classes, extend default theme
+ * Classes, extend default Material Design theme
  */
-.primary-font {
-  font-family: "'Gabriela', serif"; }
-
-.overlay-black-strong {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.7); }
-
-.relative {
-  position: relative; }
-
 .display-5 {
   font-size: 3rem;
   font-weight: 300;
   line-height: 1.1; }
+
+.btn-rounded {
+  -webkit-border-radius: 10em;
+  -moz-border-radius: 10em;
+  -ms-border-radius: 10em;
+  -o-border-radius: 10em;
+  border-radius: 10em; }
 
 .feature-box {
   text-align: center; }
@@ -6717,19 +6710,29 @@ ul.instagram-photos li {
 .feature-box .features-small .fa {
   font-size: 2rem; }
 
-.btn-rounded {
-  -webkit-border-radius: 10em;
-  -moz-border-radius: 10em;
-  -ms-border-radius: 10em;
-  -o-border-radius: 10em;
-  border-radius: 10em; }
-
 html,
 body,
 header,
 .view,
 .full-height {
   height: 100%; }
+
+/*!
+  * Other Helped classes
+  */
+.primary-font {
+  font-family: "'Gabriela', serif"; }
+
+.overlay-black-strong {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7); }
+
+.relative {
+  position: relative; }
 
 .pricing-card {
   text-align: center;
@@ -6787,8 +6790,12 @@ header,
 /********************************!
  * Theme base classes
  ********************************/
+body {
+  background: #000; }
+
 .section {
-  position: relative; }
+  position: relative;
+  background: white; }
 
 .section-paddings {
   padding: 50px 0 30px 0; }
@@ -6895,70 +6902,65 @@ header,
     margin-top: 5px; }
 
 /*!
- * Navigation & Intro
+ * Home
  */
-/* Navigation*/
-.navbar {
-  background-color: transparent; }
-  .navbar .navbar-brand {
-    padding: 0;
-    line-height: 40px; }
-  .navbar img.logo {
-    height: 36px; }
-
-.top-nav-collapse {
-  background-color: #263238;
-  transition: all 1s; }
-
-@media only screen and (max-width: 768px) {
-  .navbar {
-    background-color: #263238; } }
-
-/* Intro */
-.intro .full-bg-img {
-  color: #fff; }
-
-.intro.view {
-  background: url("../img/project/intro/bg7.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; }
-
-.intro h1 {
-  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.64);
-  font-weight: bold;
-  font-size: 3rem;
-  padding: 30px 0;
-  border-top: 2px solid rgba(255, 255, 255, 0.54);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.47); }
-
-.intro .start {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
+header#home {
+  /* Navigation*/
+  /* Intro */ }
+  header#home .navbar {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1; }
+    header#home .navbar .navbar-brand {
+      padding: 0;
+      line-height: 40px; }
+      header#home .navbar .navbar-brand .logo {
+        height: 30px; }
+    header#home .navbar .description {
+      color: gray;
+      line-height: 13px;
+      display: block;
+      margin-top: 6px;
+      font-size: 14px; }
+  header#home .top-nav-collapse {
+    background-color: #263238;
+    transition: all 1s; }
+  @media only screen and (max-width: 768px) {
+    header#home .navbar {
+      background-color: #263238; } }
+  header#home .intro .particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.6; }
+  header#home .intro .full-bg-img {
+    color: #fff; }
+  header#home .intro.view {
+    background: #16202c; }
+  header#home .intro h1 {
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.64);
+    font-weight: bold;
+    font-size: 3rem;
+    padding: 30px 0;
+    border-top: 2px solid rgba(255, 255, 255, 0.54);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.47); }
+  header#home .intro .start {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
 
 /*!
-* count-down
+* technologies
 */
-.count-down {
-  overflow: hidden;
-  padding: 20px 0 30px;
-  margin-top: -10px; }
-  .count-down .divider-new {
-    margin: 20px 0; }
-  .count-down .col {
-    text-align: center;
-    position: relative; }
-    .count-down .col .digit {
-      font-size: 70px;
-      color: #00bcd4;
-      display: inline-block;
-      width: 40px;
-      height: 100px;
-      overflow: hidden; }
-    .count-down .col .note {
-      text-transform: uppercase; }
-  .count-down .note {
-    margin-bottom: 0 !important; }
+#technologies .technologies-block {
+  text-align: center;
+  padding: 20px 10px; }
+  #technologies .technologies-block img {
+    margin: 3px 10px;
+    max-height: 50px; }
 
 /*---------------------------------------
     SECTION:  About
@@ -6975,7 +6977,7 @@ header,
 .program {
   overflow: hidden;
   width: 100%;
-  background: url(../img/project/program/bg.jpg) no-repeat center top fixed;
+  background: url(../img/site/program/bg.jpg) no-repeat center top fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -6984,7 +6986,7 @@ header,
 .timeline {
   margin: 40px auto 0;
   width: 100%;
-  background: url(../img/project/program/timeline-badge.jpg) center left repeat-y;
+  background: url(../img/site/program/timeline-badge.jpg) center left repeat-y;
   height: auto;
   position: relative;
   padding: 0 0 80px; }
@@ -7155,7 +7157,7 @@ header,
    SECTION:  Friend
 -----------------------------------------*/
 .friend {
-  background: url(../img/project/friend/bg2.jpg); }
+  background: url(../img/site/friend/bg2.jpg); }
   .friend .topgirl {
     position: absolute;
     width: 400px;

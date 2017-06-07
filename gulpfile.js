@@ -11,6 +11,7 @@ var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'), // Сжимает CSS
 
     rename = require('gulp-rename'),
+    rimraf = require('gulp-rimraf'),
 
     spritesmith = require('gulp.spritesmith'), // Создает спрайты
     imagemin = require('gulp-imagemin'), // Сжимаем картинки
@@ -144,14 +145,18 @@ gulp.task('style', function () {
 });
 
 gulp.task('img', function () {
+
+
+    //gulp.src(path.public.img).pipe(rimraf());  // Удалим прежние картинки
+
     gulp.src(path.src.img) 
-    .pipe(imagemin({ //Сожмем их
-        progressive: true, //сжатие .jpg
-        svgoPlugins: [{removeViewBox: false}], //сжатие .svg
-        interlaced: true, //сжатие .gif
-        use: [pngquant()],
-        optimizationLevel: 3 //степень сжатия от 0 до 7
-    }))
+    // .pipe(imagemin({ //Сожмем их
+    //     progressive: true, //сжатие .jpg
+    //     svgoPlugins: [{removeViewBox: false}], //сжатие .svg
+    //     interlaced: true, //сжатие .gif
+    //     use: [pngquant()],
+    //     optimizationLevel: 3 //степень сжатия от 0 до 7
+    // }))
     .pipe(gulp.dest(path.public.img))
     .pipe(reload({stream: true}));
 

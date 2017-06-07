@@ -19,14 +19,67 @@
  @include font-face(Gabriela, 'https://fonts.googleapis.com/css?family=Gabriela', normal, italic);
 
 /*!
- * Classes, extend default theme
+ * Classes, extend default Material Design theme
  */
 
+ // Display
+ .display-5 {
+   font-size: 3rem;
+   font-weight: 300;
+   line-height: 1.1;
+ }
+
+ // Buttons
+ .btn-rounded {
+     -webkit-border-radius: 10em;
+     -moz-border-radius: 10em;
+     -ms-border-radius: 10em;
+     -o-border-radius: 10em;
+     border-radius: 10em;
+ }
+
+ // feature
+ .feature-box {
+     text-align: center
+ }
+ .feature-box .feature-title {
+     font-weight: 500;
+     margin-bottom: 1rem
+ }
+ .feature-box .features-big .feature-title {
+     margin-top: 2rem;
+     margin-bottom: 1rem
+ }
+ .feature-box .features-big .fa {
+     font-size: 4rem
+ }
+ .feature-box .features-small {
+     text-align: left
+ }
+ .feature-box .features-small .fa {
+     font-size: 2rem;
+ }
+
+ // view
+ html,
+ body,
+ header,
+ .view,
+ .full-height {
+     height: 100%;
+ }
+
+ /*!
+  * Other Helped classes
+  */
+ 
+// Font
 $primary-font: "'Gabriela', serif";
 .primary-font {
   font-family: $primary-font;
 }
 
+// Background
 .overlay-black-strong {
   position: absolute;
   top: 0;
@@ -35,55 +88,15 @@ $primary-font: "'Gabriela', serif";
   left: 0;
   background-color: rgba(0,0,0,.7);
 }
+
+// Position
 .relative {
   position: relative;
 }
-// Display
-.display-5 {
-  font-size: 3rem;
-  font-weight: 300;
-  line-height: 1.1;
-}
-// feature
-.feature-box {
-    text-align: center
-}
-.feature-box .feature-title {
-    font-weight: 500;
-    margin-bottom: 1rem
-}
-.feature-box .features-big .feature-title {
-    margin-top: 2rem;
-    margin-bottom: 1rem
-}
-.feature-box .features-big .fa {
-    font-size: 4rem
-}
-.feature-box .features-small {
-    text-align: left
-}
-.feature-box .features-small .fa {
-    font-size: 2rem;
-}
 
 
-// Buttons
-.btn-rounded {
-    -webkit-border-radius: 10em;
-    -moz-border-radius: 10em;
-    -ms-border-radius: 10em;
-    -o-border-radius: 10em;
-    border-radius: 10em;
-}
 
-// view
-html,
-body,
-header,
-.view,
-.full-height {
-    height: 100%;
-}
+
 
 // Price
 .pricing-card {
@@ -157,8 +170,12 @@ header,
 /********************************!
  * Theme base classes
  ********************************/
+ body {
+  background: #000;
+ }
 .section {
   position: relative;
+  background: white;
 }
 .section-paddings {
   padding: 50px 0 30px 0;
@@ -273,92 +290,104 @@ header,
 
 
 /*!
- * Navigation & Intro
+ * Home
  */
+header#home {
 
-/* Navigation*/
 
-.navbar {
-    background-color: transparent;
-    .navbar-brand {
-      padding: 0;
-      line-height: 40px;
+
+  /* Navigation*/
+
+  .navbar {
+      background-color: transparent;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+
+      .navbar-brand {
+        padding: 0;
+        line-height: 40px;
+        .logo {
+          height: 30px;
+        }
+      }
+      .description {
+        color: gray;
+        line-height: 13px;
+        display: block;
+        margin-top: 6px;
+        font-size: 14px;
+      }
+  }
+
+  .top-nav-collapse {
+      background-color: #263238;
+      transition: all 1s;
+  }
+
+  @media only screen and (max-width: 768px) {
+      .navbar {
+          background-color: #263238;
+      }
+  }
+
+  /* Intro */
+
+  .intro {
+
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0.6;
     }
-    img.logo {
-      height: 36px;
+
+    .full-bg-img {
+        color: #fff;
     }
-}
 
-.top-nav-collapse {
-    background-color: #263238;
-    transition: all 1s;
-}
-
-@media only screen and (max-width: 768px) {
-    .navbar {
-        background-color: #263238;
+    &.view {
+        background: #16202c;
     }
-}
 
-/* Intro */
+    h1 {
+      text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.64);
+      font-weight: bold;
+      font-size: 3rem;
+      padding: 30px 0;
+      border-top: 2px solid rgba(255, 255, 255, 0.54);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.47);
+    }
+    .start {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
 
-.intro {
-
-  .full-bg-img {
-      color: #fff;
-  }
-
-  &.view {
-      background: url("../img/project/intro/bg7.jpg")no-repeat center center fixed;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-  }
-
-  h1 {
-    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.64);
-    font-weight: bold;
-    font-size: 3rem;
-    padding: 30px 0;
-    border-top: 2px solid rgba(255, 255, 255, 0.54);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.47);
-  }
-  .start {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   }
 
 
 }
+
+
+
 
 
 /*!
-* count-down
+* technologies
 */
-.count-down {
-  overflow: hidden;
-  padding: 20px 0 30px;
-  margin-top: -10px;
-  .divider-new {
-      margin: 20px 0;
-  }
-  .col {
-      text-align: center;
-      position: relative;
-      .digit {
-          font-size: 70px;
-          color: #00bcd4;
-          display: inline-block;
-          width: 40px;
-          height: 100px;
-          overflow: hidden;
-      }
-      .note {
-          text-transform: uppercase;
-      }
-  }
-  .note {
-      margin-bottom: 0 !important;
+#technologies {
+
+  .technologies-block {
+    text-align: center;
+    padding: 20px 10px;
+
+    img {
+      margin: 3px 10px;
+      max-height: 50px;
+    }
   }
 }
 
@@ -388,7 +417,7 @@ header,
 
     width: 100%;
 
-    background: url(../img/project/program/bg.jpg) no-repeat center top fixed;
+    background: url(../img/site/program/bg.jpg) no-repeat center top fixed;
     -webkit-background-size: cover;
        -moz-background-size: cover;
          -o-background-size: cover;
@@ -398,7 +427,7 @@ header,
 .timeline {
   margin: 40px auto 0;
   width: 100%;
-  background: url(../img/project/program/timeline-badge.jpg) center left repeat-y;
+  background: url(../img/site/program/timeline-badge.jpg) center left repeat-y;
   height: auto;
   position: relative;
   padding: 0 0 80px;
@@ -599,7 +628,7 @@ header,
    SECTION:  Friend
 -----------------------------------------*/
 .friend {
-  background: url(../img/project/friend/bg2.jpg);
+  background: url(../img/site/friend/bg2.jpg);
   .topgirl {
     position: absolute;
     width: 400px;
